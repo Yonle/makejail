@@ -1,0 +1,10 @@
+Make Jail
+=========
+A simple script that will create a jailed environment (Bootstrap). 
+
+This script ahould work at some UNIX-Based operating system, Like Linux, BSD, and etc.
+
+For Termux Users
+================
+For some reason, This script does not seems to work on Termux,
+Because the ldd command in Termux environment is not a regular ldd.
