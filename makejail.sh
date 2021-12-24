@@ -13,5 +13,5 @@ else
 
 	echo "Proceed creating tarballs...."
 
-	tar -cvaf $(JAIL_FILENAME:-"JailBootstrap-$(uname)-$(uname -m).tar.gz") $paths
+	tar -cvaf ${JAIL_FILENAME:-"JailBootstrap-$(uname)-$(uname -m).tar.gz"} $paths
 fi
