@@ -8,7 +8,8 @@ else
 	paths=""
 	for cmd in $@; do
 		! command -v $cmd > /dev/null && echo "$cmd not found" && exit 1
-		paths="$paths $(command -v $cmd) `ldd $(command -v $cmd) | grep -o "/.*" | cut -d"(" -f1 | cut -d":" -f1`"
+		libs=`ldd $(command -v $cmd) | grep -o "\(\.*\)\/.* \(\.*\)"`
+		paths="$paths $libs"
 	done
 
 	echo "Proceed creating tarballs...."
