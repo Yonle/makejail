@@ -9,7 +9,7 @@ else
 	for cmd in $@; do
 		! command -v $cmd > /dev/null && echo "$cmd not found" && exit 1
 		libs=`ldd $(command -v $cmd) | grep -o "\(\.*\)\/.* \(\.*\)"`
-		paths="$paths $libs"
+		paths="$paths $(command -v $cmd) libs"
 	done
 
 	echo "Proceed creating tarballs...."
